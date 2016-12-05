@@ -1,0 +1,25 @@
+{
+  "name": "w2-p2018-00-base",
+  "version": "1.0.0",
+  "description": "This is a basic repository to start the HETIC Mobile First course.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcalou/w2-p2018-00-base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcalou/w2-p2018-00-base/issues"
+  },
+  "homepage": "https://github.com/bcalou/w2-p2018-00-base#readme"
+}
