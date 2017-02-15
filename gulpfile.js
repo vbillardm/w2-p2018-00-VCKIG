@@ -1,29 +1,59 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    sync = require('browser-sync').create();
+'use strict';
 
-gulp.task('html', function() {
-    gulp.src('app/index.html')
-        .pipe(gulp.dest('dist'))
-        .pipe(sync.stream());
-});
+let gulp        = require('gulp'),
+    sass        = require('gulp-sass'),
+    cssmin      = require('gulp-cssmin'),
+    rename      = require('gulp-rename'),
+    prefix      = require('gulp-autoprefixer'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat'),
+    imagemin    = require('gulp-imagemin'),
+    sync        = require('browser-sync').create();
 
-gulp.task('scss', function() {
-    return gulp.src('app/scss/style.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('dist/css'))
-        .pipe(sync.stream());
-});
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass', 'js'], function() {
 
-gulp.task('watch', function() {
-  gulp.watch(['./app/scss/**/*.scss'], ['scss']);
-  gulp.watch(['./app/index.html'], ['html']);
-});
-
-gulp.task('sync', ['html', 'scss', 'watch'], function() {
     sync.init({
-        server: __dirname + '/dist'
+        server: './'
     });
+
+    gulp.watch('src/scss/**/*.scss', ['sass']);
+    gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('./*.html').on('change', sync.reload);
 });
 
-gulp.task('default', ['sync'], function() {});
+// Configure CSS tasks.
+gulp.task('sass', function () {
+  return gulp.src('src/scss/**/*.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(prefix('last 2 versions'))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(sync.stream());
+});
+
+// Configure JS.
+gulp.task('js', function() {
+  return gulp.src('src/js/**/*.js')
+    .pipe(uglify())
+    .pipe(concat('app.js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(sync.stream());
+});
+
+// Configure image stuff.
+gulp.task('images', function () {
+  return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('watch', function () {
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('./*.html').on('change', sync.reload);
+});
+
+gulp.task('default', ['sass', 'js', 'images', 'serve']);
