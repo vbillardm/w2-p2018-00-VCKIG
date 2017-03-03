@@ -3,10 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>W2 Mobile First Project Base</title>
+    <title>Unit - One chat to master all</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-<h1>Hello world</h1>
+
+<!--HEADER-->
+<header class="header">
+    <a href="">
+        <div class="header__logo">
+            <img srcset="
+                examples/images/image-384.jpg 1x, 
+                examples/images/image-768.jpg 2x
+            " alt="U">
+        </div>
+    </a>
+    <a href="" id="js-menuBtn">
+        <div class="header__menu header__menu--closed"></div>
+    </a>
+</header> <!--HEADER-->
+
+<!--LANDINGPAGE-->
+<section class="landingpage">
+    <h1 class="landingpage__title">Unit</h1>
+    <h3 class="landingpage__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus aliquid quas officia? Fuga accusamus.</h3>
+    <div class="landingpage__footer">
+        <a href="" id="js-readNext">
+            <img src="" alt="&#8595;">
+        </a>
+    </div>
+</section> <!--LANDINGPAGE-->
+
+<!--PRESENTATION-->
+<section class="presentation">
+    <h2 class="presentation__title">Unit</h1>
+    <p class="presentation__intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero illum totam sit aliquam dicta tempora vel, ea expedita impedit aliquid soluta architecto libero laborum, sed veniam sint laudantium illo.</p>
+    <p class="presentation__features">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero illum totam sit aliquam dicta tempora vel, ea expedita impedit aliquid soluta architecto libero laborum, sed veniam sint laudantium illo.</p>
+</section> <!--PRESENTATION-->
+
+<!--DOWNLOAD-->
+<section class="download">
+    <h2 class="download__title">Téléchargement</h1>
+    <form class="download__form">
+        <div class="input">
+            <label for="email" class="input__label input__label--email">e-mail :</label>
+            <input type="email" class="input__field input__field--email"
+                    name="email" value="" placeholder="example@unit.com" aria-autocomplete="inline">
+        </div>
+        <div class="input">
+            <label for="message" class="input__label input__label--message"></label>
+            <input type="text" class="input__field input__field--message" name="message" value="">
+        </div>
+        <div class="input">
+            <input type="checkbox" class="input__button input__button--newsletter" name="newsletter" value="">
+            <label for="newsletter" class="input__label input__label--newsletter">S'inscrire à la newsletter</label>
+        </div>
+        <button class="download__button" type="button">Télécharger</button>
+    </form>
+</section> <!--DOWNLOAD-->
+
+<!--CONTACT-->
+<section class="contact">
+    <h2 class="contact__title">Une idée ?</h1>
+    <h3 class="contact__subtitle">Des idées d'améliorations ?<br>Ecrivez-nous :</h3>
+        <div class="input">
+            <label for="email" class="input__label input__label--email">e-mail :</label>
+            <input type="email" class="input__field input__field--email"
+                    name="email" value="" placeholder="example@unit.com" aria-autocomplete="inline">
+        </div>
+        <div class="input">
+            <label for="message" class="input__label input__label--message"></label>
+            <textarea rows="" cols=""></textarea>
+        </div>
+    <button class="contact__button" type="button">Envoyer</button>
+</section> <!--CONTACT-->
+
+<!--FOOTER-->
+<footer class="footer">
+    <p class="footer__legal">Mentions légales</p>
+    <p class="footer__copyright">&#169;Unit</p>
+</footer> <!--FOOTER-->
+
 </body>
 </html>
