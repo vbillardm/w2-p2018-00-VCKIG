@@ -1,24 +1,26 @@
 'use strict';
 
-let gulp        = require('gulp'),
-    sass        = require('gulp-sass'),
-    cssmin      = require('gulp-cssmin'),
-    rename      = require('gulp-rename'),
-    prefix      = require('gulp-autoprefixer'),
-    uglify      = require('gulp-uglify'),
-    concat      = require('gulp-concat'),
-    imagemin    = require('gulp-imagemin'),
-    sync        = require('browser-sync').create();
+let gulp = require('gulp');
+let cssmin = require('gulp-cssmin');
+let prefix = require('gulp-autoprefixer');
+let uglify = require('gulp-uglify');
+let concat = require('gulp-concat');
+let imagemin = require('gulp-imagemin');
+let sync = require('browser-sync').create();
+let sugarss = require('sugarss');
+let postcss = require('gulp-postcss');
+let rename = require('gulp-rename');
+let nested = require('postcss-nested');
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['html', 'sass', 'js'], function() {
+gulp.task('serve', ['html', 'sss', 'js'], function() {
 
     sync.init({
         server: './dist/'
     });
 
     gulp.watch('app/*.html', ['html']);
-    gulp.watch('app/scss/**/*.scss', ['sass']);
+    gulp.watch('app/sss/**/*.sss', ['sss']);
     gulp.watch('app/js/**/*.js', ['js']);
 });
 
@@ -29,14 +31,12 @@ gulp.task('html', function () {
     .pipe(sync.stream());
 });
 
-
 // Configure CSS tasks.
-gulp.task('sass', function () {
-  return gulp.src('app/scss/**/*.scss')
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(prefix('last 2 versions'))
-    .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
+gulp.task('sss', function () {
+  return gulp.src('app/**/*.sss')
+    .pipe(postcss([nested], { parser: sugarss }))
+    .pipe(concat('style'))
+    .pipe(rename({ extname: '.css' }))
     .pipe(gulp.dest('dist/css'))
     .pipe(sync.stream());
 });
@@ -60,8 +60,8 @@ gulp.task('images', function () {
 
 gulp.task('watch', function () {
     gulp.watch('app/*.html', ['html']);
-    gulp.watch('app/scss/**/*.scss', ['sass']);
+    gulp.watch('app/sss/**/*.sss', ['sss']);
     gulp.watch('app/js/**/*.js', ['js']);
 });
 
-gulp.task('default', ['html', 'sass', 'js', 'images', 'serve']);
+gulp.task('default', ['html', 'sss', 'js', 'images', 'serve']);
