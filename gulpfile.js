@@ -1,7 +1,6 @@
 'use strict';
 
 let gulp = require('gulp');
-let cssmin = require('gulp-cssmin');
 let prefix = require('gulp-autoprefixer');
 let uglify = require('gulp-uglify');
 let concat = require('gulp-concat');
