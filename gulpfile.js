@@ -7,7 +7,10 @@ let concat = require('gulp-concat');
 let imagemin = require('gulp-imagemin');
 let sync = require('browser-sync').create();
 let sugarss = require('sugarss');
+let pixrem  = require('pixrem');
 let postcss = require('gulp-postcss');
+let cssimport = require('postcss-import');
+let cssnext = require('postcss-cssnext');
 let rename = require('gulp-rename');
 let nested = require('postcss-nested');
 
@@ -32,8 +35,19 @@ gulp.task('html', function () {
 
 // Configure CSS tasks.
 gulp.task('sss', function () {
-  return gulp.src('app/**/*.sss')
-    .pipe(postcss([nested], { parser: sugarss }))
+  return gulp.src('app/sss/styles.sss')
+    .pipe(postcss(
+        [
+            cssimport,
+            cssnext(
+                {browsers: ['last 2 version'],
+                compress: true}
+            ),
+            pixrem,
+            nested
+        ],
+        { parser: sugarss }
+    ))
     .pipe(concat('style'))
     .pipe(rename({ extname: '.css' }))
     .pipe(gulp.dest('dist/css'))
