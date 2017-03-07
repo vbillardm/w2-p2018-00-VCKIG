@@ -11,88 +11,122 @@
 
 <!--HEADER-->
 <header class="header">
-    <a href="">
-        <div class="header__logo">
-            <img srcset="
-                examples/images/image-384.jpg 1x, 
-                examples/images/image-768.jpg 2x
-            " alt="U">
-        </div>
-    </a>
-    <a href="" id="js-menuBtn">
-        <div class="header__menu header__menu--closed"></div>
-    </a>
+    <div class="header__logo"></div>
+    <nav class="header__menu-desktop">
+		<ul class="header__list-desktop">
+			<li class="header__item-desktop header__item-desktop--active"><a href="#accueil" class="header__link-desktop">Accueil</a></li>
+			<li class="header__item-desktop"><a href="#description" class="header__link-desktop">Description</a></li>
+			<li class="header__item-desktop--CTA"><a href="#telechargement" class="header__link-desktop">Telechargement</a></li>
+			<li class="header__item-desktop"><a href="#contact" class="header__link-desktop">Contact</a></li>
+		</ul>
+	</nav>
+	<nav class="header__menu-mobile">
+		<img class="header__menu-mobile--open" src="../img/burger.png" alt="">
+		<ul class="header__list-mobile">
+			<li><img class="header__mobile-close" src="../img/cross.png" alt="X"></li>
+			<li class="header__item-mobile header__item-mobile--active"><a href="#landingpage">Accueil</a></li>
+			<li class="header__item-mobile"><a href="#features">Description</a></li>
+			<li class="header__item-mobile"><a href="#download">Téléchargement</a></li>
+			<li class="header__item-mobile"><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
 </header> <!--HEADER-->
 
 <!--LANDINGPAGE-->
 <section class="landingpage">
-    <h1 class="landingpage__title">Unit</h1>
-    <h4 class="landingpage__subtitle">Plus besoin de plusieurs applications pour discuter avec vos amis, retrouvez tous
-        vos chats préférés au même endroit.</h4>
-    <div class="landingpage__footer">
-        <a href="" id="js-readNext">
-            <img src="" alt="&#8595;">
-        </a>
+    <img src="../img/U-mobile.png" alt="" class="landingpage__logo">
+
+    <div class="landingpage__container">
+        <div class="landingpage__title">
+            <h2>TOUS VOS SPEAK,</h2>
+        </div>
+        <div class="landingpage__title">
+            <h2>UNE SEULE APP !</h2>
+        </div>
+        <div class="landingpage__logo-container">
+            <img src="../img/lol.png" alt="">
+            <img src="../img/origin.png" alt="">
+            <img src="../img/battlenet.png" alt="">
+            <img src="../img/steam.png" alt="">
+        </div>
     </div>
 </section> <!--LANDINGPAGE-->
 
-<!--PRESENTATION-->
-<section class="presentation">
-    <h2 class="presentation__title">Unit</h2>
-    <p class="presentation__intro">Une application entièrement customisable, sécurisée, et optimisée pour les joueurs
-        souhaitant discuter avec leurs amis.</p>
-    <p class="presentation__features">
-    <ul>
-        <li>Partagez des images, liens et vidéos très facilement.</li>
-        <li>Choisissez les chats désirés, et connectez-vous avec vos comptes de jeu.</li>
-        <li>Gratuit et simple d’utilisation, plus besoin de passer par des applications payantes.</li>
-        <li>Aucun problème de FPS et d'optimisation pendant les jeux.</li>
-        <li>Une interface facile à utiliser et à paramétrer.</li>
-    </ul>
-    </p>
-</section> <!--PRESENTATION-->
+<!--DESCRIPTION-->
+<section class="description">
+    <div class="description__text">
+        <p>Une application pour les gouverner toutes, une application pour les trouver</p>
+        <p>Une application pour les amener tous et en temps réel  les lier</p>
+    </div>
+    <div class="description__iphone"></div>
+</section> <!--DESCRIPTION-->
+
+<!--FEATURES-->
+<section class="features">
+    <div class="features__list">
+        <div class="features__theme">
+            <h3 class="features__title">Sessions de chat personnalisées</h3>
+            <div class="features__imagedesc features__imagedesc--chat"></div>
+            <p class="features__description">Créez facilement des salons privés administrables </p>
+        </div>
+        <div class="features__theme">
+            <h3 class="features__title">Partagez vos exploits</h3>
+            <div class="features__imagedesc features__imagedesc--share"></div>
+            <p class="features__description">Partagez des screensshots, ou encore des vidéos, grâce a nos serveurs de discussion.
+            </p>
+        </div>
+        <div class="features__theme">
+            <h3 class="features__title">Protocoles de sécurisation</h3>
+            <div class="features__imagedesc features__imagedesc--secure"></div>
+            <p class="features__description">N’ayez plus peur de perdre vos données, de vous faire hacker ou que quelqu’un puisse s’immiscer dans votre vie privée. Nous sécurisons de bout en bout vos échanges grâce à des protocoles de sécurisation de données. </p>
+        </div>
+        <div class="features__theme">
+            <h3 class="features__title">Regroupez votre communautée</h3>
+            <div class="features__imagedesc features__imagedesc--multi"></div>
+            <p class="features__description">Créez et rejoignez des serveurs privés en administrant vous mêmes les utilisateurs.
+            </p>
+        </div>
+    </div>
+</section><!--FEATURES-->
 
 <!--DOWNLOAD-->
 <section class="download">
-    <h2 class="download__title">Téléchargement</h2>
-    <p class="download__subtitle">Avec l'application Unit, connectez-vous très facilement et commencez dès maintenant
-    à discuter depuis votre téléphone pendant vos sessions de jeux.</p>
-    <form class="download__form">
-        <div class="input">
-            <label for="email" class="input__label input__label--email">E-mail :</label>
-            <input type="email" class="input__field input__field--email"
-                   name="email" value="" placeholder="example@unit.com" aria-autocomplete="inline">
-        </div>
-        <div class="input">
-            <input type="checkbox" class="input__button input__button--newsletter" name="newsletter" value="">
-            <label for="newsletter" class="input__label input__label--newsletter">Inscription à la newsletter</label>
-        </div>
-        <button class="download__button" type="button">Télécharger</button>
-        <p class="download__appendice">Unit est open source, vous n'avez donc rien à craindre concernant vos données.<br><!--wtf?
-                                    -->De plus, tous les échanges de données sont entièrement sécurisés.</p>
-    </form>
+    <div class="download__phones-box">
+        <img src="../img/iphone.png" alt="">
+        <img src="../img/android.png" alt="">
+    </div>
+    <div class="download__images-box">
+        <h3 class="download__title">DEJA DISPONIBLE ET EN ILLIMITÉ !</h3>
+        <img class="download__image" src="../img/google-play.png" alt="">
+        <img class="download__image" src="../img/app-store.png" alt="">
+    </div>
 </section> <!--DOWNLOAD-->
 
 <!--CONTACT-->
 <section class="contact">
-    <h2 class="contact__title">Une idée ?</h2>
-    <h3 class="contact__subtitle">Envoyez nous vos idées d'améliorations !</h3>
-    <div class="input">
-        <label for="email" class="input__label input__label--email">E-mail :</label>
-        <input type="email" class="input__field input__field--email"
-               name="email" value="" placeholder="example@unit.com" aria-autocomplete="inline">
+    <h3 class="contact__title">Contact</h3>
+    <form class="contact__form" action="">
+        <input class="contact__input-email" type="text" placeholder="E-mail">
+        <textarea placeholder="Votre message..." class="contact__input-message" name="" id="" cols="30" rows="10"></textarea>
+        <input class="contact__input-button" type="button" value="Envoyer">
+    </form>
+    <div>
+        <p class="contact__text">Nous restons bien sûr joignable par mail si vous souhaitez nous informer de vos ressentis et problèmes. Nous serons ravi de répondre dans les plus brefs délais.
+            <br> <i>"Your feedback to make it greater."</i>
+        </p>
     </div>
-    <div class="input">
-        <label for="message" class="input__label input__label--message"></label>
-        <textarea rows="" cols=""></textarea>
-    </div>
-    <button class="contact__button" type="button">Envoyer</button>
 </section> <!--CONTACT-->
 
 <!--FOOTER-->
 <footer class="footer">
-    <p class="footer__legal">Un logiciel, Une équipe. Unit, pour Unité, fraternité, solidarité.</p>
-    <p class="footer__copyright">&#169;Unit</p>
+    <div class="footer">
+        <ul class="footer__list">
+            <li class="footer__item"><img src="/img/noscope.png" alt=""></li>
+            <li class="footer__item"><img src="/img/cinch.png" alt=""></li>
+            <li class="footer__item"><img src="/img/squid.png" alt=""></li>
+            <li class="footer__item"><img src="/img/twitch.png" alt=""></li>
+        </ul>
+    </div>
 </footer> <!--FOOTER-->
 
 </body>

@@ -1,16 +1,150 @@
 .header
-	background-color: var(--blue-firefly)
-	height: var(--header-height)
-	width: 100vw
-	background-color: yellow
+	height: 89px
+	background: #1C1C1C
+	display: table
+	width: 100%
 
-	@media (--medium)
+	@media (--tablet)
 		background-color: blue
 
-	@media (--large)
-		background-color: red
-
 	&__logo
-		height: 100px
-		width: 100px
-		background-color: red
+		cursor: pointer
+		margin: 20px 0 0 35px
+		width: 80px
+		display: table-cell
+		background: url('/img/U.png') no-repeat
+		vertical-align: middle
+		background-position: 50% 50%
+
+		@media(--desktop)
+			width: 20%
+			background: url('/img/Unit.png') no-repeat
+			background-position: 50% 50%
+
+	&__menu-desktop
+		display: none
+
+		@media(--desktop)
+			display: table-cell
+			vertical-align: middle
+			width: 80%
+			overflow: hidden
+
+	&__list-desktop
+		text-align: right
+		margin-right: 75px
+
+	&__item-desktop
+		display: inline-block
+		margin: 0 6%
+		padding: 9px
+		border-radius: 40px
+
+	&__link-desktop
+		font-family: Futura
+		color: white
+		text-decoration: none
+		font-size: 20px
+
+		&:last-child
+			margin: 0
+		
+		&:hover
+			::after
+				content: ''
+				position: absolute
+				width: 100%
+				height: 4px
+				left: 0px
+				top: 35px
+				z-index: 0
+				background-color: #DD0000
+				transform: skewX(-35deg)
+				-webkit-transform: skewX(-35deg)
+
+	&__item-desktop--active
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 4px
+			left: 0px
+			top: 35px
+			z-index: 0
+			background-color: #DD0000
+			transform: skewX(-35deg)
+			-webkit-transform: skewX(-35deg)
+
+	&__CTA
+		background: #DD0000
+		position: relative
+		box-shadow: 3px 3px 0px #A11515
+
+		&:hover
+			box-shadow: 0px 0px 0px #A11515
+			position: relative
+			top: 3px
+			left: 3px
+
+			::after
+				display: none
+
+	&__menu-mobile
+		float: right
+
+		@media(--desktop)
+			display: none
+
+	&__mobile--close
+		cursor: pointer
+		margin: 26px 35px 0 0
+		width: 47px
+
+	&__menu-mobile
+		float: right
+		
+		img
+			cursor: pointer
+			margin: 26px 35px 0 0
+			width: 47px
+
+	&__list-mobile
+		visibility: hidden
+		opacity: 0
+		transition: visibility 0s, opacity 0.2s linear
+		background: #1C1C1C
+		position: absolute
+		right: 0
+		top: 0
+		width: 30%
+		height: 400px
+		color: white
+		font-family: futura
+		font-size: 20px
+		text-align: center
+
+		img
+			position: relative
+			right: -94px
+			top: -31px
+
+	&__item-mobile
+		margin: 30px 0
+		position: relative
+
+	&__item-mobile--active
+		display: inline-block
+		position: relative
+		margin-bottom: 0
+
+		::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 4px
+			left: 0px
+			top: 35px
+			z-index: 0
+			background-color: #DD0000
+			transform: skewX(-35deg)
+			-webkit-transform: skewX(-35deg)

@@ -1,19 +1,65 @@
 .download
-	height: 80vh
-	background-color: var(--blue-lynch)
+	height: 644px
+	width: 100%
+	margin-top: -2px
+	background: #DD0000
 
-	@media (--medium)
-		background-color: blue
+	&__phones-box
+		display: none
 
-	@media (--large)
-		background-color: red
+		img
+			width: 40%
+
+		@media (--desktop)
+			display: block
+			float: left
+			width: 60%
+
+	&__images-box
+
+		@media (--tablet)
+			width: 669px
+			display: block
+			margin: 0 auto
+
+		@media (--desktop)
+			width: 40%
+			float: right
+
+	&__image
+		display: block
+		margin: 90px auto
+
+		@media (--tablet)
+			display: inline-block
+			margin: 90px 4px
+
+		@media (--desktop)
+			display: block
+			margin: 90px auto
 
 	&__title
+		font-size: 35px
+		color: white
+		width: 343px
+		font-family: futura
+		text-align: center
+		border-bottom: solid 5px white
+		margin: 0 auto
+		padding-bottom: 65px
+		padding-top: 80px
 
-	&__subtitle
+		@media (--desktop)
+			font-size: 35px
+			color: white
+			width: 343px
+			font-family: futura
+			text-align: center
+			border-bottom: solid 5px white
+			margin: 0 auto
+			padding-bottom: 65px
 
-	&__form
-
-	&__button
-
-	&__appendice
+	@media (--desktop)
+		height: 644px
+		background: url('/img/section-4.png') no-repeat
+		background-size: cover

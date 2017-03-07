@@ -40,10 +40,10 @@ gulp.task('sss', function () {
     .pipe(postcss(
         [
             cssimport,
-            cssnext(
-                {browsers: ['last 2 version'],
-                compress: true}
-            ),
+            cssnext({
+								browsers: ['last 2 version'],
+                compress: true
+						}),
             pixrem,
             nested
         ],
