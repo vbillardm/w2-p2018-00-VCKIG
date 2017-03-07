@@ -1,0 +1,89 @@
+section.avantages{
+  width: 100%;
+  margin-top: -2px;
+  .avantages__list{
+    @include tablet(){
+      display: table;
+    }
+    @include desktop(){
+      width: 100%;
+    }
+  }
+  .avantages__theme{
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #FF0000;
+    .avantages__theme--title{
+      color: #fff;
+      font-family: 'Lato';//BLACK
+      font-size: 1.25em;
+      margin: 0 auto;
+      width: 50%;
+    }
+    .avantages__theme--image-description{
+      margin: 0 auto;
+      margin-top: 30px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      &.chat{
+        height: 63px;
+        width: 76px;
+        background-image: url('/dist/images/avantages/picto_chat.png');
+      }
+      &.share{
+        height: 51px;
+        width: 61px;
+        background-image: url('/dist/images/avantages/picto_share.png');
+      }
+      &.secure{
+        height: 50px;
+        width: 63px;
+        background-image: url('/dist/images/avantages/picto_secure.png');
+      }
+      &.multi{
+        height: 62px;
+        width: 83px;
+        background-image: url('/dist/images/avantages/picto_multi.png');
+      }
+    }
+
+    .avantages__theme:nth-child(2),.avantages__theme:nth-child(3),.avantages__theme:nth-child(4){
+      border-top: 0px;
+    }
+
+    .avantages__theme--description{
+      color: #fff;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 20px;
+      font-family: 'Lato';
+      font-size: 1em;
+    }
+    @include tablet(){
+      width: 50%;
+      display: table-cell;
+      float: left;
+      height: 470px;
+    }
+    @include desktop(){
+      width: 22%;
+      margin-left: 2%;
+      border: 1px solid #FF0000;
+      margin-top: 80px;
+      &:nth-child(1){
+        margin-left: 3%;
+      }
+    }
+  }
+
+
+  @include desktop(){
+    background-image: url('/dist/images/avantages/background.jpg');
+    background-size: cover;
+    height: 640px;
+  }
+}

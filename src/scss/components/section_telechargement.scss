@@ -1,0 +1,75 @@
+section.telechargement{
+  height: 644px;
+  width: 100%;
+  margin-top: -2px;
+  background: #DD0000;
+  .telechargement__phones--container{
+    display: none;
+  }
+  .telechargement__title{
+    font-size: 35px;
+    color: white;
+    width: 343px;
+    font-family: futura;
+    text-align: center;
+    border-bottom: solid 5px white;
+    margin: 0 auto;
+    padding-bottom: 65px;
+    padding-top: 80px;
+
+  }
+  .telechargement__image{
+    display: block;
+    margin: 90px auto;
+  }
+  }
+  @include tablet(){
+    section.telechargement {
+      .telechargement__container__images {
+        width: 669px;
+        display: block;
+        margin: 0 auto;
+        .telechargement__image {
+          display: inline-block;
+          margin: 90px 4px;
+        }
+      }
+    }
+
+  }
+  @include desktop() {
+    section.telechargement {
+      height: 644px;
+
+      background: url('/dist/images/desktop/section-4.png') no-repeat;
+      background-size: cover;
+      .telechargement__phones--container {
+        display: block;
+        float: left;
+        width: 60%;
+        img{
+          width: 40%;
+        }
+      }
+      .telechargement__title {
+        font-size: 35px;
+        color: white;
+        width: 343px;
+        font-family: futura;
+        text-align: center;
+        border-bottom: solid 5px white;
+        margin: 0 auto;
+        padding-bottom: 65px;
+
+      }
+      .telechargement__container__images {
+        width: 40%;
+        float: right;
+        .telechargement__image {
+          display: block;
+          margin: 90px auto;
+        }
+      }
+    }
+  }
+

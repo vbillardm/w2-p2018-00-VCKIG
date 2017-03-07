@@ -1,0 +1,26 @@
+footer{
+  .footer{
+    background: #fff;
+    .footer--list{
+      padding-top: 50px;
+      padding-bottom: 50px;
+      li{
+        width: 50%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        height: 75px;
+        img{
+          width: 100px;
+          @include tablet(){
+            width: 150px;
+          }
+        }
+        @include tablet(){
+          width: 25%;
+          height: 100px;
+        }
+      }
+    }
+  }
+}

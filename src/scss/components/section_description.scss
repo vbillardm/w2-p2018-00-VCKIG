@@ -1,0 +1,47 @@
+section.description{
+  background-color: #DD0000;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  .description--text{
+    padding: 2.5em;
+    background-color: #C10606;
+    color: #fff;
+    font-size: 2em;
+    font-family: 'Lato';
+    @include tablet(){
+      box-shadow: -37px -30px 0px -10px #9D0707;
+    }
+    @include tablet(){
+      width: 560px;
+      height: 290px;
+      position: absolute;
+      top: 150px;
+      right: 50px;
+      padding: 1.8em
+    }
+  }
+  @include tablet(){
+    padding: 0;
+    height: 650px;
+    padding: 1.5em;
+    background-color: #DD0000;
+    background-image: url('/dist/images/background/logo_red.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 350px;
+    background-position: bottom left;
+  }
+  .description--iphone-image{
+    display: none;
+    @include desktop(){
+      display: block;
+      position: absolute;
+      height: 691px;
+      width: 345px;
+      background-image: url('/dist/images/iphone_description.png');
+      top: -150px;
+      left: 150px;
+    }
+  }
+}

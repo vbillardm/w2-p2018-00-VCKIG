@@ -1,0 +1,76 @@
+section.contact{
+  height: 644px;
+  background: #000000;
+  .contact__text{
+    display: none;
+  }
+       .contact__title{
+         font-size: 35px;
+         color: white;
+         width: 343px;
+         font-family: futura;
+         text-align: center;
+         border-bottom: solid 5px #DD0000;
+         margin: 0 auto;
+         padding-top: 65px;
+         padding-bottom: 40px;
+       }
+  .contact__form{
+    margin: 0 auto;
+    display: block;
+    width: 343px;
+    .contact__form__input--email{
+      width: 100%;
+      border: none;
+      margin: 30px 0;
+      height: 40px;
+      padding-left: 10px;
+
+    }
+    .contact__form__input--message{
+      width: 100%;
+      border: none;
+      height: 150px;
+      padding: 10px 0px 0px 10px;
+    }
+
+    .contact__form__input--button{
+      color: white;
+      background: #DD0000;
+      border: none;
+      font-size: 25px;
+      width: 70%;
+      margin: 30px auto;
+      display: block;
+      height: 40px;
+      cursor: pointer;
+
+    }
+  }
+
+
+}
+
+@include tablet(){
+
+
+}
+@include desktop() {
+  section.contact {
+    .contact__form {
+      float: left;
+      margin: 50px 0 0 60px;
+    }
+    .contact__text {
+      font-family: Futura;
+      line-height: 55px;
+      font-size: 25px;
+      text-align: right;
+      float: right;
+      width: 50%;
+      margin: 80px 60px 0 0;
+      display: inline-block;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+$susy: (
+        flow: ltr,
+        math: fluid,
+        output: float,
+        columns: 12,
+        gutters:  0,
+        container: 1240px
+);
+
+//bp : BREAKPOINTS
+//xs : extraSmall
+$bp-xs: 480px !default;
+//sm : small
+$bp-sm: 768px !default;
+//md : medium
+$bp-md: 1024px !default;
+//lg : large
+$bp-lg: 1280px !default;
+//xl : extraLarge
+$bp-xl: 1440px !default;
+
+//SHORTHANDS FOR BREAKPOINTS
+@mixin xs {
+  @media (max-width: ($bp-xs - 1)) {
+    @content;
+  }
+}
+@mixin tablet-phone {
+  @media (max-width: ( $bp-md - 1)) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: ($bp-sm - 1)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+@mixin tablet-only {
+  @media (min-width: $bp-sm) and (max-width: ( $bp-md - 1)) {
+    @content;
+  }
+}
+
+@mixin sm-desktop-only {
+  @media (min-width: $bp-md) and (max-width: ( $bp-lg - 1)) {
+    @content;
+  }
+}
+
+@mixin md-desktop {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+@mixin lg-desktop {
+  @media (min-width: ($bp-xl - 1)) {
+    @content;
+  }
+}

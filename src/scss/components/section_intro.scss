@@ -1,0 +1,126 @@
+section.intro {
+  height: 720px;
+  background: url("/dist/images/Mobile/section-1.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  .intro__logo{
+    display: block;
+    margin: 0 auto;
+    padding-top: 119px;
+    @include tablet(){
+      display: none;
+    }
+  }
+  .intro__container {
+    width: 80%;
+    height: 170px;
+    position: absolute;
+    bottom: 0;
+    background-color: #000;
+    @include tablet(){
+      width: 100%;
+      height: 146px;
+      background: none;
+      position: absolute;
+      top: 245px;
+      &:after{
+        display:none;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 9%;
+      top: 0;
+      z-index: -1;
+      background-color: #000;
+      transform: skewX(-18deg);
+      -webkit-transform: skewX(-18deg);
+      overflow: hidden;
+    }
+  }
+
+  .intro__container--title {
+    background: #000000;
+    display: table;
+    color: white;
+    font-size: 24px;
+    font-family: Futura;
+    height: 50px;
+    padding-left: 20px;
+    z-index: 0;
+    width: 100%;
+    h2 {
+      display: table-cell;
+      overflow: hidden;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+
+    @include tablet() {
+      margin: 10px 0;
+      position: relative;
+      color: white;
+      width: 462px;
+      font-size: 24px;
+      font-family: Futura;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 9px;
+        top: 0;
+        z-index: -1;
+        background-color: #000;
+        transform: skewX(-18deg);
+        -webkit-transform: skewX(-18deg);
+      }
+    }
+  }
+
+
+  .intro__container--logo_container {
+    margin: 25px;
+    img {
+      width: 20%;
+      display: inline-block;
+      @include  tablet(){
+        width: 50%;
+      }
+    }
+    @include tablet(){
+      display: block;
+      position: absolute;
+      right: 0;
+      top: -215px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0 17px;
+
+      img {
+        display: block;
+        @include tablet{
+          width: 100%;
+        }
+        margin: 70px 0;
+      }
+    }
+  }
+
+
+  @include tablet() {
+    height: 624px;
+    background: url("/dist/images/tablette/section-1.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  @include desktop() {
+    height: 624px;
+    background: url("/dist/images/desktop/section-1.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+}
